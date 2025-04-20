@@ -1,3 +1,15 @@
+
+<?php
+session_start();
+
+include("../Server/connection.php");
+
+if (!isset($_SESSION['employer_logged_in']) || $_SESSION['employer_logged_in'] !== true) {
+    header("Location: ../login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +24,10 @@
         <p>Welcome to your dashboard! Here you can manage your job postings and applications.</p>
         <nav>
             <a href="job-posting.php" class="nav-button">Post a Job</a>
-            <a href="application-management.html" class="nav-button">Manage Applications</a>
-            <a href="premium-job-listings.html" class="nav-button">Premium Listings</a>
-            <a href="company-achievement-feed.html" class="nav-button">Company Achievements</a>
-            <a href="../index.html" class="nav-button">Logout</a>
+            <a href="application-management.php" class="nav-button">Manage Applications</a>
+            <a href="premium-job-listings.php" class="nav-button">Premium Listings</a>
+            <a href="company-achievement-feed.php" class="nav-button">Company Achievements</a>
+            <a href="../index.php" class="nav-button">Logout</a>
         </nav>
     </div>
 </body>
