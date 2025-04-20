@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirely - Job Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html"> Return to Hirely Dashboard</a></li>
+            </ul>
+        </nav>
+        <h2>Job Search</h2>
+        <form>
+            <label for="job_title">Job Title</label>
+            <input type="text" id="job_title" name="job_title" placeholder="Enter job title">
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter location">
+
+            <label for="category">Category</label>
+            <select id="category" name="category">
+                <option value="">Select Category</option>
+                <option value="it">IT & Software</option>
+                <option value="marketing">Marketing</option>
+                <option value="finance">Finance</option>
+                <option value="healthcare">Healthcare</option>
+            </select>
+
+            <label for="salary">Salary Range</label>
+            <input type="text" id="salary" name="salary" placeholder="Enter salary range">
+
+            <button type="submit">Search Jobs</button>
+        </form>
+    </div>
+</body>
+</html>
