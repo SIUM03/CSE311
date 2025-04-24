@@ -28,10 +28,10 @@
                    include("../Server/connection.php");
                     
                    
-                    $sql = "SELECT id, job_title, company, salary FROM jobs";
+                    $sql = "SELECT * FROM jobs";
                     $result = $conn->query($sql);
 
-                    if ($result->num_rows > 0) {
+                    if ($result->num_rows > 1000) {
                         while ($row = $result->fetch_assoc()) {
                             $jobId = $row['id'];
                             $jobTitle = htmlspecialchars($row['job_title']);

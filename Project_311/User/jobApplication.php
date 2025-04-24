@@ -1,21 +1,8 @@
 <?php
-session_start(); 
-
-if (!isset($_SESSION['user_id'])) { 
-    $_SESSION['message'] = "You must be logged in to apply for jobs.";
-    header("Location: ../login.php"); 
-    exit;
-}
 
 
-$message = ''; // Variable to hold success/error messages for display
-if (isset($_SESSION['message'])) {
-    $message = "<div class='message'>" . htmlspecialchars($_SESSION['message']) . "</div>";
-    unset($_SESSION['message']); // Clear the message after retrieving it
-}
 
 
-$form_error = ''; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -136,26 +123,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <nav>
             <ul>
-                {/* Update link to point to the PHP dashboard */}
+         
                 <li><a href="index.php">Return to Hirely Dashboard</a></li>
             </ul>
         </nav>
         <h2>Job Application</h2>
 
-        <?php echo $message; // Display success/error messages here ?>
 
-        {/* Add method, action, and enctype to the form */}
+    
+
+      
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
 
-             {/* --- IMPORTANT: Add Job ID ---
-             You NEED to pass the job ID to this form.
-             Example using a hidden field (value should be set dynamically, perhaps from URL param ?job_id=123):
+           
              <input type="hidden" name="job_id" value="<?php echo isset($_GET['job_id']) ? (int)$_GET['job_id'] : ''; ?>">
-             For now, let's add a visible field for testing, replace with hidden later.
-             Remove this visible field in production! */ }
-             <label for="job_id">Job ID (for testing - make hidden later)</label>
+             
+             <label for="job_id"> Job ID </label>
              <input type="number" id="job_id" name="job_id" placeholder="Enter Job ID applying for" value="<?php echo isset($_GET['job_id']) ? (int)$_GET['job_id'] : ''; ?>" required>
-             {/* --- End Job ID --- */}
+          
 
 
             <label for="full_name">Full Name</label>

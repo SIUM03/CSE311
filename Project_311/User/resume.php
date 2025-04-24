@@ -64,8 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     // --- Load Existing Data on GET request ---
     try {
+        $user_id = 2;
         
-         if ($user_id == 1) { // Simulate data for a specific user ID for testing
+         if ($user_id == 1) {
              $full_name = 'Test User One';
              $email = 'test1@example.com';
              $phone = '111-222-3333';
@@ -116,10 +117,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <?php echo $message; // Display messages here ?>
 
-        {/* Update form method and action */}
+       
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <label for="full_name">Full Name</label>
-            {/* Add value attribute to make form "sticky" */}
+          
             <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" value="<?php echo htmlspecialchars($full_name); ?>" required>
 
             <label for="email">Email</label>
@@ -129,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" id="phone" name="phone" placeholder="Enter your phone number" value="<?php echo htmlspecialchars($phone); ?>" required>
 
             <label for="skills">Skills</label>
-            {/* Add content inside textarea tags to make it sticky */}
+      
             <textarea id="skills" name="skills" placeholder="List your skills (e.g., PHP, Project Management, Communication)" required><?php echo htmlspecialchars($skills); ?></textarea>
 
             <label for="experience">Experience</label>
@@ -138,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="education">Education</label>
             <textarea id="education" name="education" placeholder="Enter your education details (Degree, University, Dates)" required><?php echo htmlspecialchars($education); ?></textarea>
 
-            {/* Changed button text slightly for clarity */}
+          
             <button type="submit">Save Resume Data</button>
         </form>
     </div>
