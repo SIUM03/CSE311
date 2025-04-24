@@ -6,7 +6,7 @@ CREATE TABLE `admin` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=1005 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci	
+) ;
 
 CREATE TABLE `Jobs` (
   `job_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -19,7 +19,7 @@ CREATE TABLE `Jobs` (
   `Company` varchar(50) NOT NULL,
   `status` enum('pending','varified','rejected') DEFAULT 'pending',
   PRIMARY KEY (`job_id`)
-) 
+) ;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -30,20 +30,20 @@ CREATE TABLE `users` (
   `status` enum('active','inactive') NOT NULL DEFAULT 'inactive',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) 
+) ;
 
 CREATE TABLE `advertisements` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ad_image` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-)
+);
 
-INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES (NULL, 'MD. Abdul Wadud\r\n', 'sium007@gmail.com', 'parents30'), (NULL, 'Admin', 'admin', 'admin'), (NULL, 'Sazim Rahman', 'cr007@nsu.com', 'tobitob\r\n')
+INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES (NULL, 'MD. Abdul Wadud\r\n', 'sium007@gmail.com', 'parents30'), (NULL, 'Admin', 'admin', 'admin'), (NULL, 'Sazim Rahman', 'cr007@nsu.com', 'tobitob\r\n');
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `status`) VALUES (NULL, 'John Doe', 'john.doe@example.com', 'password123', 'employer', 'active'), (NULL, 'Frank Blue', 'frank.blue@example.com', 'password123', 'job_seeker', 'active'), (NULL, 'Grace Yellow', 'grace.yellow@example.com', 'password123', 'employer', 'active'), (NULL, 'Sium', 'ss@com', 'tobitob', 'job_seeker', 'active'), (NULL, 'brainstation', 'brain@23.com', 'siummmmm', 'employer', 'inactive'), (NULL, 'brb ainstation', 'bra in@23.com', 'siummm mm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'bradfin@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'braddffin@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'bradfidfn@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'Z adfisdnstation', 'bradfdfsin@23.com', 'siummmfdfdfmm', 'employer', 'inactive'), (NULL, 'brb adsdfinstation', 'bradfsain@23.com', 'siummmfdmmd', 'employer', 'inactive'), (NULL, 'brb adfin station', 'brsdadfjhin@23.com', 'siummdfmfdmm', 'employer', 'inactive')
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `status`) VALUES (NULL, 'John Doe', 'john.doe@example.com', 'password123', 'employer', 'active'), (NULL, 'Frank Blue', 'frank.blue@example.com', 'password123', 'job_seeker', 'active'), (NULL, 'Grace Yellow', 'grace.yellow@example.com', 'password123', 'employer', 'active'), (NULL, 'Sium', 'ss@com', 'tobitob', 'job_seeker', 'active'), (NULL, 'brainstation', 'brain@23.com', 'siummmmm', 'employer', 'inactive'), (NULL, 'brb ainstation', 'bra in@23.com', 'siummm mm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'bradfin@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'braddffin@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'bradfidfn@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'Z adfisdnstation', 'bradfdfsin@23.com', 'siummmfdfdfmm', 'employer', 'inactive'), (NULL, 'brb adsdfinstation', 'bradfsain@23.com', 'siummmfdmmd', 'employer', 'inactive'), (NULL, 'brb adfin station', 'brsdadfjhin@23.com', 'siummdfmfdmm', 'employer', 'inactive');
 
-INSERT INTO `advertisements` (`id`, `ad_image`, `description`) VALUES (NULL, 'https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg', '100 dollar per day by sazim musk'), (NULL, 'https://i.ytimg.com/vi/ZgE-ZRvlIlk/maxresdefault.jpg', 'this is a add'), (NULL, 'https://i.ytimg.com/vi/IHIbg3zHJ20/maxresdefault.jpg', '50 dollar till 01/26'), (NULL, 'http://img.zergnet.com/1240050_300.jpg', '1000 dollar add for 5 years')
+INSERT INTO `advertisements` (`id`, `ad_image`, `description`) VALUES (NULL, 'https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg', '100 dollar per day by sazim musk'), (NULL, 'https://i.ytimg.com/vi/ZgE-ZRvlIlk/maxresdefault.jpg', 'this is a add'), (NULL, 'https://i.ytimg.com/vi/IHIbg3zHJ20/maxresdefault.jpg', '50 dollar till 01/26'), (NULL, 'http://img.zergnet.com/1240050_300.jpg', '1000 dollar add for 5 years');
 
 INSERT INTO `Jobs` (`job_id`, `title`, `salary`, `description`, `category`, `job_type`, `location`, `Company`, `status`) VALUES
 (387, 'Content Writer', '60000 USD/year', 'Create and edit digital content.', 'Marketing', 'Part-time', 'Online', 'WordCraft', 'varified'),
