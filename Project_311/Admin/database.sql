@@ -39,7 +39,7 @@ CREATE TABLE `advertisements` (
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES (NULL, 'MD. Abdul Wadud\r\n', 'sium007@gmail.com', 'parents30'), (NULL, 'Admin', 'admin', 'admin'), (NULL, 'Sazim Rahman', 'cr007@nsu.com', 'tobitob\r\n');
+INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES (NULL, 'MD. Abdul Wadud\r\n', 'sium007@gmail.com', 'parents30'), (NULL, 'Admin', 'admin', 'admin'), (NULL, 'MD ABDUL WADUD', 'cr007@nsu.com', 'tobitob\r\n');
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `status`) VALUES (NULL, 'John Doe', 'john.doe@example.com', 'password123', 'employer', 'active'), (NULL, 'Frank Blue', 'frank.blue@example.com', 'password123', 'job_seeker', 'active'), (NULL, 'Grace Yellow', 'grace.yellow@example.com', 'password123', 'employer', 'active'), (NULL, 'Sium', 'ss@com', 'tobitob', 'job_seeker', 'active'), (NULL, 'brainstation', 'brain@23.com', 'siummmmm', 'employer', 'inactive'), (NULL, 'brb ainstation', 'bra in@23.com', 'siummm mm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'bradfin@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'braddffin@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'brb adfinstation', 'bradfidfn@23.com', 'siummmfdmm', 'employer', 'inactive'), (NULL, 'Z adfisdnstation', 'bradfdfsin@23.com', 'siummmfdfdfmm', 'employer', 'inactive'), (NULL, 'brb adsdfinstation', 'bradfsain@23.com', 'siummmfdmmd', 'employer', 'inactive'), (NULL, 'brb adfin station', 'brsdadfjhin@23.com', 'siummdfmfdmm', 'employer', 'inactive');
 
