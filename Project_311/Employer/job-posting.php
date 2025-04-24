@@ -21,7 +21,7 @@
             $workLocation = htmlspecialchars($_POST['work-location']);
 
             $sql = "INSERT INTO jobs (title, salary, description, job_category, job_type, work_location) 
-                    VALUES (?, ?, ?, ?, ?, ?)";
+                    VALUES ($title ,  $salary,$description,  $jobCategory,    $jobType ,  $workLocation)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssssss", $title, $salary, $description, $jobCategory, $jobType, $workLocation);
 

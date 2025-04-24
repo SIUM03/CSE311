@@ -3,7 +3,7 @@
 $db_server = "127.0.0.1:3308";
 $db_user = "root";
 $password = "";
-$db_name = "hirely";   
+$db_name = "hirely";
 
 $conn = mysqli_connect(
     $db_server,
@@ -15,7 +15,7 @@ $conn = mysqli_connect(
 if (!$conn)
     echo "Failed to connect to the database";
 else
-    echo "Connected to the database";
+    // echo "Connected to the database";
 // mysqli_select_db($conn, $db_name);
 
 ?>

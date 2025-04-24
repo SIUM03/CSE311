@@ -27,7 +27,7 @@
                     <?php
                    include("../Server/connection.php");
                     
-                    // Fetch job listings from the database
+                   
                     $sql = "SELECT id, job_title, company, salary FROM jobs";
                     $result = $conn->query($sql);
 

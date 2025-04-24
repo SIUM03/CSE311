@@ -14,15 +14,15 @@
         <h2>Welcome to Hirely!</h2>
         <p>Login to get started</p>
         <form action="User/login.php" method="POST">
-        <div class="input-container">
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-        </div>
+            <div class="input-container">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+            </div>
 
-        <div class="buttons">
-            <a href="User/index.php" class="btn seeker">Login as a Job Seeker</a>
-            <a href="Employer/dashboard.html" class="btn employer">Login as an Employer</a>
-        </div>
+            <div class="buttons">
+                <a href="User/index.php" class="btn seeker">Login as a Job Seeker</a>
+                <a href="Employer/dashboard.php" class="btn employer">Login as an Employer</a>
+            </div>
         </form>
         <p class="register"><a href="registration.php">Create an account
 

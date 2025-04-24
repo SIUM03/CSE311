@@ -4,10 +4,7 @@ session_start();
 
 include("../Server/connection.php");
 
-if (!isset($_SESSION['employer_logged_in']) || $_SESSION['employer_logged_in'] !== true) {
-    header("Location: ../login.php");
-    exit;
-}
+
 ?>
 
 <!DOCTYPE html>

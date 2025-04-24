@@ -1,34 +1,43 @@
 <?php
-include("../Server/connection.php");
+session_start();
+include '../Server/connection.php'; 
+
+$error = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $pass = "";
-
-    $sql = "SELECT password,name FROM user WHERE email='$email' and status='active' ";
-    $db_pass = $conn->query($sql);
-    if ($db_pass->num_rows > 0) {
-        while ($row = $db_pass->fetch_assoc()) {
-            $pass = $row["password"];
-            $name = $row["name"];
-            $pass = trim($pass);
-
-        }
-        if ($password == $pass) {
-            header("Location: index.php?name=$name");
-        } else {
-            echo '<h1 style="text-align: center;" >Invalid Password</h1>';
-            // echo $password;
-        }
+ 
+    if (empty($email) || empty($password)) {
+        $error = "Please enter both email and password.";
     } else {
-        echo '<h1 style="text-align: center;" >No Such User Found</h1>';
+        
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
 
+        $result = $stmt->get_result();
+
+        if ($result->num_rows == 1) {
+            $user = $result->fetch_assoc();
+
+            
+            if ($user['password'] === $password) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_name'] = $user['name'];
+                $_SESSION['user_role'] = $user['role']; // optional
+
+                header("Location: dashboard.php");
+                exit;
+            } else {
+                $error = "Incorrect password.";
+            }
+        } else {
+            $error = "No account found with that email.";
+        }
+
+        $stmt->close();
     }
-
-
-
 }
-
-
 ?>
